@@ -1,5 +1,3 @@
-# Jogo-da-Velha
- 
 <h1>Jogo da Velha em HTML, CSS e JavaScript</h1>
     <p>Este é um projeto de um jogo da velha implementado utilizando HTML, CSS e JavaScript. O jogo permite que dois
         jogadores insiram seus nomes, exibe o nome do jogador da vez, atualiza o tabuleiro quando um jogador faz uma
@@ -38,11 +36,11 @@
         Desenvolver este jogo da velha foi uma jornada empolgante. Através dele, pude entender como as diferentes
         tecnologias se integram para criar uma aplicação interativa. Aprendi a manipular elementos HTML, estilizá-los
         com CSS e adicionar funcionalidades dinâmicas com JavaScript.
-        Ao longo do desenvolvimento, enfrentei desafios e encontrei soluções criativas para implementar cada
-        funcionalidade do jogo. Foi gratificante ver o jogo ganhar vida na tela e testemunhar o resultado do meu
-        esforço.
-        Este projeto é apenas o começo da minha jornada como desenvolvedor. Pretendo continuar aprendendo e aprimorando
-        minhas habilidades. Estou animado para explorar novas tecnologias e enfrentar desafios mais complexos no futuro.
     </p>
+<p>Ao longo do desenvolvimento, enfrentei desafios e encontrei soluções criativas para implementar cada
+        funcionalidade do jogo. Foi gratificante ver o jogo ganhar vida na tela e testemunhar o resultado do meu
+        esforço.</p>
+<p>Este projeto é apenas o começo da minha jornada como desenvolvedor. Pretendo continuar aprendendo e aprimorando
+        minhas habilidades. Estou animado para explorar novas tecnologias e enfrentar desafios mais complexos no futuro.</p>
     <p>Espero que este projeto inspire outras pessoas a iniciar sua jornada no desenvolvimento web. Lembre-se de que o
         mais importante é continuar aprendendo, praticando e construindo projetos para aprimorar suas habilidades.</p>
