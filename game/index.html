@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+
+    <!-- Tela do começo do jogo -->
+    <div id="playerNames">
+        <h1>Players</h1>
+        <input type="text" name="player1" id="player1" placeholder="Player1" maxlength="9">
+        <input type="text" name="player2" id="player2" placeholder="Player2" maxlength="9">
+        <button id="playBtn">Play</button>
+    </div>
+
+
+
+    <section id="all">
+        <section id="gameStatus" class="timer">
+            <h1>Now it's</h1> <span id="spanName"></span>
+            <h1>turn!</h1>
+        </section>
+        <main id="game">
+            <div class="tableSquare" data-position="A1" id="A1"></div>
+            <div class="tableSquare" data-position="A2" id="A2"></div>
+            <div class="tableSquare" data-position="A3" id="A3"></div>
+            <div class="tableSquare" data-position="B1" id="B1"></div>
+            <div class="tableSquare" data-position="B2" id="B2"></div>
+            <div class="tableSquare" data-position="B3" id="B3"></div>
+            <div class="tableSquare" data-position="C1" id="C1"></div>
+            <div class="tableSquare" data-position="C2" id="C2"></div>
+            <div class="tableSquare" data-position="C3" id="C3"></div>
+        </main>
+    </section>
+
+</body>
+
+</html>
