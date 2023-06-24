@@ -310,14 +310,12 @@ button {
 
   #gameStatus span {
     letter-spacing: 0px;
-    font-size: 1em;
+    font-size: 1.5em;
     color: var(--timer-color);
   }
 
   #all {
-    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 20px;
   }
 
@@ -348,14 +346,5 @@ button {
     font-family: "numbers", "century gothic";
     letter-spacing: 15px;
     font-size: 2.5em;
-  }
-
-  #playAgain {
-    width: 300px;
-    background-image: linear-gradient(
-      to right,
-      var(--player1-color),
-      var(--player2-color)
-    );
   }
 }
