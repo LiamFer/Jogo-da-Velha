@@ -23,6 +23,23 @@ let winConditions = [
   ["A3", "B2", "C1"],
 ];
 
+// Seleção de cores no início
+const player1Color = document.getElementById("colorPlayer1");
+const player2Color = document.getElementById("colorPlayer2");
+let color1 = "";
+let color2 = "";
+
+player1Color.addEventListener("change", function () {
+  color1 = player1Color.value;
+  root.style.setProperty("--player1-color", color1);
+});
+
+player2Color.addEventListener("change", function () {
+  color2 = player2Color.value;
+  root.style.setProperty("--player2-color", color2);
+  root.style.setProperty("--timer-color", color2);
+});
+
 // Adicionando o funcionamento dos quadrados do jogo da velha
 document.querySelectorAll(".tableSquare").forEach(function (square) {
   square.addEventListener("click", function game() {
@@ -34,19 +51,19 @@ document.querySelectorAll(".tableSquare").forEach(function (square) {
       count = 0;
     }
     if (count === 0) {
-      root.style.setProperty("--timer-color", "#9562F5");
-      spanName.style.color = "#9562F5";
+      root.style.setProperty("--timer-color", color1);
+      spanName.style.color = color1;
       spanName.innerText = player1;
       square.innerText = 0;
-      square.style.color = "#65DEF1";
+      square.style.color = color2;
       player2Positions.push(square.dataset.position);
       console.log(`${player2} posições ${player2Positions}`);
     } else {
-      root.style.setProperty("--timer-color", "#65DEF1");
-      spanName.style.color = "#65DEF1";
+      root.style.setProperty("--timer-color", color2);
+      spanName.style.color = color2;
       spanName.innerText = player2;
       square.innerText = 1;
-      square.style.color = "#9562F5";
+      square.style.color = color1;
       player1Positions.push(square.dataset.position);
       console.log(`${player1} posições ${player1Positions}`);
     }
@@ -88,9 +105,9 @@ function checkWin() {
       let square1 = document.getElementById(winConditions[i][0]);
       let square2 = document.getElementById(winConditions[i][1]);
       let square3 = document.getElementById(winConditions[i][2]);
-      square1.style.backgroundColor = "#9562F5";
-      square2.style.backgroundColor = "#9562F5";
-      square3.style.backgroundColor = "#9562F5";
+      square1.style.backgroundColor = color1;
+      square2.style.backgroundColor = color1;
+      square3.style.backgroundColor = color1;
       square1.style.color = "white";
       square2.style.color = "white";
       square3.style.color = "white";
@@ -105,9 +122,9 @@ function checkWin() {
       let square1 = document.getElementById(winConditions[i][0]);
       let square2 = document.getElementById(winConditions[i][1]);
       let square3 = document.getElementById(winConditions[i][2]);
-      square1.style.backgroundColor = "#65DEF1";
-      square2.style.backgroundColor = "#65DEF1";
-      square3.style.backgroundColor = "#65DEF1";
+      square1.style.backgroundColor = color2;
+      square2.style.backgroundColor = color2;
+      square3.style.backgroundColor = color2;
       square1.style.color = "white";
       square2.style.color = "white";
       square3.style.color = "white";
