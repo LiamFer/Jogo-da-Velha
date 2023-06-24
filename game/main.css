@@ -7,7 +7,7 @@
   --timer-color: aqua;
   --player1-color: #9562f5;
   --player2-color: #65def1;
-  --winner-color: ;
+  --winner-color: black;
 }
 
 @font-face {
@@ -49,6 +49,7 @@ body {
   font-family: "numbers";
   border-radius: 10%;
   text-shadow: 2px 2px 5px rgba(185, 185, 185, 0.37);
+  cursor: pointer;
 }
 
 #gameStatus {
@@ -198,10 +199,59 @@ body {
   outline: 2px solid var(--player2-color);
 }
 
+#winnerScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  display: none;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#winnerScreen h1:nth-child(2) {
+  font-size: 5em;
+}
+
+#winnerScreen h1 {
+  text-shadow: 20px 20px 1215px var(--player1-color),
+    20px 20px 105px var(--player2-color);
+  color: var(--winner-color);
+  font-family: "numbers", "century gothic";
+  letter-spacing: 15px;
+  font-size: 2.5em;
+}
+
+#playAgain {
+  width: 300px;
+  background-image: linear-gradient(
+    to right,
+    var(--player1-color),
+    var(--player2-color)
+  );
+}
+
+button{
+cursor: pointer;
+}
+
 /* Animações */
 
 .goUp {
   animation: goUp 1s ease-in-out forwards;
+}
+
+.winAppear {
+  animation: winAppear 2s ease-in-out forwards;
+}
+
+.winFade {
+  animation: winFade 2s ease-in-out forwards;
 }
 
 @keyframes goUp {
@@ -211,39 +261,20 @@ body {
   }
 }
 
-#winnerScreen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes winAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-#winnerScreen article {
-  box-shadow: 10px 10px 1215px var(--player1-color);
-  border-radius: 6px;
-  background-color: var(--back-color);
-  padding: 25px;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#winnerScreen h1 {
-  color: var(--player1-color);
-  font-family: "numbers", "century gothic";
-  letter-spacing: 15px;
-  font-size: 2.5em;
-}
-
-#playAgain {
-  width: 100%;
-  background-image: linear-gradient(to right, var(--player1-color), var(--player2-color));
+@keyframes winFade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
