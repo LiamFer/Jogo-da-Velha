@@ -43,7 +43,6 @@ player2Color.addEventListener("change", function () {
 function prepareGame() {
   document.querySelectorAll(".tableSquare").forEach(function (square) {
     square.addEventListener("click", function game() {
-      console.log(count);
       count++;
       if (count > 1) {
         count = 0;
@@ -68,9 +67,6 @@ function prepareGame() {
           break;
       }
       squaresFull++;
-      console.log(`${squaresFull} Quadrados Preenchidos`);
-      console.log(`${player1} posições -> ${player1Positions}`);
-      console.log(`${player2} posições -> ${player2Positions}`);
       checkWin();
       square.removeEventListener("click", game);
     });
@@ -78,6 +74,7 @@ function prepareGame() {
 }
 
 prepareGame();
+
 
 // Menu inicial que captura o nome dos jogadores
 playBtn.addEventListener("click", function () {
@@ -99,8 +96,8 @@ playBtn.addEventListener("click", function () {
 
 // Função para verificar e retornar uma string do jogador vencedor
 function checkWin() {
-  let winner1 = 0;
-  let winner2 = 0;
+  let winner1 = false;
+  let winner2 = false;
   document.getElementById("tieText").innerText = "Winner";
   for (let i = 0; i < winConditions.length; i++) {
     if (
@@ -108,16 +105,16 @@ function checkWin() {
       player1Positions.includes(winConditions[i][1]) &&
       player1Positions.includes(winConditions[i][2])
     ) {
-      winner1++;
-      let square1 = document.getElementById(winConditions[i][0]);
-      let square2 = document.getElementById(winConditions[i][1]);
-      let square3 = document.getElementById(winConditions[i][2]);
-      square1.style.backgroundColor = color1;
-      square2.style.backgroundColor = color1;
-      square3.style.backgroundColor = color1;
-      square1.style.color = "white";
-      square2.style.color = "white";
-      square3.style.color = "white";
+      winner1 = true;
+      let items = [
+        document.getElementById(winConditions[i][0]),
+        document.getElementById(winConditions[i][1]),
+        document.getElementById(winConditions[i][2]),
+      ];
+      items.forEach(function (square) {
+        square.style.backgroundColor = color1;
+        square.style.color = "white";
+      });
     }
 
     if (
@@ -125,20 +122,20 @@ function checkWin() {
       player2Positions.includes(winConditions[i][1]) &&
       player2Positions.includes(winConditions[i][2])
     ) {
-      winner2++;
-      let square1 = document.getElementById(winConditions[i][0]);
-      let square2 = document.getElementById(winConditions[i][1]);
-      let square3 = document.getElementById(winConditions[i][2]);
-      square1.style.backgroundColor = color2;
-      square2.style.backgroundColor = color2;
-      square3.style.backgroundColor = color2;
-      square1.style.color = "white";
-      square2.style.color = "white";
-      square3.style.color = "white";
+      winner2 = true;
+      let items = [
+        document.getElementById(winConditions[i][0]),
+        document.getElementById(winConditions[i][1]),
+        document.getElementById(winConditions[i][2]),
+      ];
+      items.forEach(function (square) {
+        square.style.backgroundColor = color2;
+        square.style.color = "white";
+      });
     }
   }
 
-  if (winner1 > 0) {
+  if (winner1 === true) {
     document.getElementById("winner").innerText = player1;
     root.style.setProperty("--winner-color", color1);
     winnerScreen.style.display = "flex";
@@ -147,7 +144,7 @@ function checkWin() {
     return;
   }
 
-  if (winner2 > 0) {
+  if (winner2 === true) {
     document.getElementById("winner").innerText = player2;
     root.style.setProperty("--winner-color", color2);
     winnerScreen.style.display = "flex";
@@ -201,3 +198,5 @@ playAgain.addEventListener("click", function () {
     winnerScreen.style.display = "none";
   }, 1500);
 });
+
+document.getElementById('audio').volume = 0.1
