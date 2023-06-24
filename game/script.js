@@ -75,7 +75,6 @@ function prepareGame() {
 
 prepareGame();
 
-
 // Menu inicial que captura o nome dos jogadores
 playBtn.addEventListener("click", function () {
   if (inptPlay1.value.length === 0 || inptPlay2.value.length === 0) {
@@ -199,4 +198,6 @@ playAgain.addEventListener("click", function () {
   }, 1500);
 });
 
-document.getElementById('audio').volume = 0.1
+let audio = document.getElementById("audio");
+audio.volume = 0.1;
+
