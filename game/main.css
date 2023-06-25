@@ -213,6 +213,7 @@ body {
 }
 
 #playAgain {
+  animation: playAgainBtn 1s ease-in-out infinite alternate forwards;
   width: 300px;
   background-image: linear-gradient(
     to right,
@@ -224,7 +225,6 @@ body {
 button {
   cursor: pointer;
 }
-
 
 /* Animações */
 
@@ -242,6 +242,16 @@ button {
 
 .winFade {
   animation: winFade 2s ease-in-out forwards;
+}
+
+@keyframes playAgainBtn {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
 }
 
 @keyframes goUp {
